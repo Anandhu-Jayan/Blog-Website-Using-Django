@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+    body{
+        font-family: 'Rubik', sans-serif;
+        margin:0;
+      }
+    .navbar {
+      background-color:black;
+      overflow: hidden;
+
+    }
+
+    .navbar a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background-color: #47cf73;
+      color: black;
+    }
+    .navbar a:nth-child(2){
+      background-color: #47cf73;
+      color: black;
+    }
+
+    body {
+             background-color: #f0f0f0;
+
+         }
+
+         h1 {
+            color: #333;
+            padding-left:30px;
+         }
+
+         form {
+            margin:20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+         }
+
+         label {
+            font-weight: bold;
+         }
+
+         input[type="text"],
+         textarea {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+         }
+
+        button{
+        background-color: black;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+        padding:8px 20px;
+        border-radius:5px   ;
+        font-size: medium;
+        border: none;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/newpost">New Post</a>
+    <a href="#about">About</a>
+    </div>
+    <h1>NEW POST</h1>
+    <form action="/addpost/" method="post">
+        {%csrf_token%}
+        <label for="title">Title:</label>
+        <br>
+        <input type="text" id="title" name="title">
+        <br>
+        <br>
+        <label for="description">Description:</label>
+        <br>
+        <textarea id="description" name="desc" rows="4" cols="50"></textarea>
+        <br>
+        <br>
+        <button>submit</button>
+    </form>
+
+</div>
+</body>
+</html>
